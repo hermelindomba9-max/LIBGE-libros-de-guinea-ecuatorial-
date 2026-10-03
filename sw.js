@@ -1,5 +1,5 @@
 // LIBGE · service worker: guarda la app en el teléfono para usarla sin internet
-const CACHE = 'libge-v1';
+const CACHE = 'libge-v2';
 const CORE = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
