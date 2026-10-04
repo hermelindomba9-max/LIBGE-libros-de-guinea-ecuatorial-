@@ -61,7 +61,7 @@ const CREST="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQD
 const MEM={},SMEM={};
 const ls={g(k,d){if(k in MEM)return MEM[k];try{const v=JSON.parse(localStorage.getItem(k));return v??d}catch{return d}},s(k,v){MEM[k]=v;try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
 const ss={g:k=>{if(k in SMEM)return SMEM[k];try{return sessionStorage.getItem(k)}catch{return null}},s:(k,v)=>{SMEM[k]=v;try{sessionStorage.setItem(k,v)}catch{}}};
-const okPw=v=>v.trim().toUpperCase()===OWNER,ADMIN="ADMIN-LIBGE-26",okAd=v=>v.trim().toUpperCase()===ADMIN;document.body.style.setProperty("--lg","url("+LOGO+")");let LT=0,LTm=0;
+const okPw=v=>v.trim().toUpperCase()===OWNER,ADMIN="252525",okAd=v=>v.trim().toUpperCase()===ADMIN;document.body.style.setProperty("--lg","url("+LOGO+")");let LT=0,LTm=0;
 let _db;const db=()=>_db||(_db=new Promise((ok,ko)=>{const r=indexedDB.open("libge",1);r.onupgradeneeded=()=>{r.result.createObjectStore("books");r.result.createObjectStore("gal",{keyPath:"id"})};r.onsuccess=()=>ok(r.result);r.onerror=ko}));
 const tx=async(st,m,f)=>{const d=await db();return new Promise((ok,ko)=>{const t=d.transaction(st,m),q=f(t.objectStore(st));t.oncomplete=()=>ok(q&&q.result);t.onerror=ko})};
 const COM=["Lengua","Matemáticas","Francés","Inglés","Ciencias Naturales","Ciencias Sociales","Religión","Educación Física","Plástica"];
